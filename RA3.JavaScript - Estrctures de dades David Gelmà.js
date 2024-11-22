@@ -1,13 +1,6 @@
-let array1 = [1, 2, 3, 4];
-let array2 = [3, 4, 5, 6];
+const o = {'a': 1, 'b': 3, 'c': 6}
 
-let setFusionat = new Set();
-for (let i in array1) {
-    setFusionat.add(array1[i]);
-}
-for (let element of array2) {
-    setFusionat.add(element);
-}
-let arrayFusionat = [...setFusionat];
+let m = new Map(Object.keys(o).map(k => [k, o[k]]))
+let cubics = new Map([...m].map(([k, v]) => [k, v ** 3]))
 
-console.log("Array fusionat sense duplicats:", arrayFusionat);
+console.log("Map amb els valors cúbics:", cubics)
